@@ -1,0 +1,86 @@
+---
+swagger: "2.0"
+info:
+  description: "Glossary API exposed as a rest svc"
+  version: "1.0.0"
+  title: "Glossary APIs"
+host: "localhost:8080"
+basePath: "/glossary/rest"
+tags:
+- name: "Glossary"
+schemes:
+- "http"
+paths:
+  /:
+    get:
+      tags:
+      - "Glossary"
+      summary: "Fetches all glossarys"
+      description: ""
+      operationId: "getGlossarys"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        default:
+          description: "successful operation"
+    post:
+      tags:
+      - "Glossary"
+      summary: "Creates a glossary given a JSon Book representation"
+      description: ""
+      operationId: "saveGlossary"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        default:
+          description: "successful operation"
+  /count:
+    get:
+      tags:
+      - "Glossary"
+      operationId: "getCount"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        default:
+          description: "successful operation"
+  /{id}:
+    get:
+      tags:
+      - "Glossary"
+      summary: "Fethces a glossary given an id"
+      description: ""
+      operationId: "getGlossary"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+        pattern: "\\d+"
+        format: "int64"
+      responses:
+        default:
+          description: "successful operation"
+    delete:
+      tags:
+      - "Glossary"
+      summary: "Deletes a glossary given an id"
+      description: ""
+      operationId: "deleteGlossary"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+        pattern: "\\d+"
+        format: "int64"
+      responses:
+        default:
+          description: "successful operation"

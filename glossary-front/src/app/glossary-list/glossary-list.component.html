@@ -1,0 +1,15 @@
+<h1>
+  Glossaries ({{nrGlossaries}})
+</h1>
+<ul class="list-unstyled">
+  <li class="media my-4" *ngFor="let glossary of glossaries">
+    <a [routerLink]="['/glossary-detail', glossary.id]">
+      <img class="d-inline-block mr-3 mb-3 img-thumbnail" src="{{glossary.imageUrl}}"/>
+      <span class="d-inline-block mt-0 mb-1">
+          <h5>{{glossary.english}}</h5>
+          <h5>{{glossary.bosnian}}</h5>
+      </span>
+    </a>
+  </li>
+</ul>
+
